@@ -59,8 +59,8 @@ bot.on('message', (msg) => {
                         `Klasifikasi Tegangan $(jres2)`
                 );
             })
-         })
-     }else{
+        })
+    }else{
             state = 0
      }
 })
@@ -77,7 +77,6 @@ r.get('/prediction/:i/:r', function(req, res, next) {
     })
 });
 
-<<<<<<< Updated upstream
 // routers
 r.get('/classify/:i/:r', function(req, res, next) {    
     model.predict(
@@ -100,6 +99,3 @@ r.get('/classify/:i/:r', function(req, res, next) {
 });
 
 module.exports = r;
-=======
-module.exports = r;
->>>>>>> Stashed changes
