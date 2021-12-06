@@ -18,7 +18,7 @@ bot.onText(/\/start/, (msg) => {
         `hello ${msg.chat.first_name}, welcome...\n
         click /predict`
     );   
-    state = 0;;
+    state = 0;
 });
 
 // input
@@ -62,7 +62,7 @@ bot.on('message', (msg) => {
         })
     }else{
         state = 0
-     }
+    }
 })
 
 // routers
