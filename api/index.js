@@ -7,7 +7,7 @@ const cls_model = require('./sdk/cls_model.js'); // cls
 
 // Bot Setting
 const TelegramBot = require('node-telegram-bot-api');
-const token = '5031223524:AAHdtW9pZ1hdwA3NqhpYYmofM3HxLxiNC8I'
+const token = '1733547356:AAEOX7oG_z09vS34M-DUHOm5YCPsXYDXohg'
 const bot = new TelegramBot(token, {polling: true});
 
 state = 0;
@@ -77,6 +77,7 @@ r.get('/prediction/:i/:r', function(req, res, next) {
     })
 });
 
+<<<<<<< Updated upstream
 // routers
 r.get('/classify/:i/:r', function(req, res, next) {    
     model.predict(
@@ -99,3 +100,6 @@ r.get('/classify/:i/:r', function(req, res, next) {
 });
 
 module.exports = r;
+=======
+module.exports = r;
+>>>>>>> Stashed changes
