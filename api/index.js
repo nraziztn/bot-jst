@@ -7,7 +7,7 @@ const cls_model = require('./sdk/cls_model.js'); // cls
 
 // Bot Setting
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1733547356:AAEOX7oG_z09vS34M-DUHOm5YCPsXYDXohg'
+const token = '5083715426:AAG54RIL7qeDUp4c0skrDQjlJfRhKGUYZv4'
 const bot = new TelegramBot(token, {polling: true});
 
 state = 0;
@@ -48,11 +48,11 @@ bot.on('message', (msg) => {
             cls_model.classify([i, r, v, p]).then((jres2)=>{
                 bot.sendMessage(
                         msg.chat.id
-                        `nilai v yang diprediksi adalah ${jres1[0]} watt`
+                        `nilai v yang diprediksi adalah ${v} watt`
                 );
                 bot.sendMessage(
-                        msg.chat.id,
-                        `nilai p yang diprediksi adalah ${jres1[1]} watt`
+                    msg.chat.id,
+                    `nilai p yang diprediksi adalah ${p} watt`
                 );
                 bot.sendMessage(
                         msg.chat.id,
@@ -61,12 +61,12 @@ bot.on('message', (msg) => {
             })
         })
     }else{
-            state = 0
+        state = 0
      }
 })
 
 // routers
-r.get('/prediction/:i/:r', function(req, res, next) {    
+r.get('/predict/:i/:r', function(req, res, next) {    
     model.predict(
         [
             parseFloat(req.params.i), // string to float
