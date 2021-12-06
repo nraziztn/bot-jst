@@ -13,15 +13,15 @@ const argMax = argFact((min, el) => (el[0] > min[0] ? el : min))
 
 function ArgMax(res){
   label = "NORMAL"
-  if(argMax(cls_data) == 1){
+  if(argMax(res) == 1){
         label = "OVER VOLTAGE"
-    }if(argMax(cls_data) == 0){
+    }if(argMax(res) == 0){
         label = "DROP VOLTAGE"
     }
     return label
 }
 
-async function predict(data){
+async function classify(data){
     let in_dim = 4; // irvp
     
     data = normalized(data);
@@ -31,7 +31,7 @@ async function predict(data){
 
     try{
         // path load in public access => github
-        const path = 'https://raw.githubusercontent.com/zendi014/jst_service/main/public/cls_model/model.json';
+        const path = 'https://raw.githubusercontent.com/zendi014/bot-jst/main/public/ex_model/model.json';
         const model = await tf.loadGraphModel(path);
         
         predict = model.predict(
